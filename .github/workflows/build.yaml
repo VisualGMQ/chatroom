@@ -25,13 +25,7 @@ jobs:
     - name: Run vcpkg
       uses: lukka/run-vcpkg@v11
 
-    - name: Prepare Ubuntu
-      if: contains(matrix.os, 'ubuntu')
-      run: |
-        sudo apt update -y
-        sudo apt install cmake -y
-
-    - name: Config cmake(Ubuntu&MacOS)
+    - name: Config cmake
       run: ${{ matrix.cmake-path }}cmake --preset=default
 
     - name: Build under PC
