@@ -23,7 +23,6 @@ jobs:
       uses: lukka/get-cmake@latest
 
     - name: Run vcpkg
-      if: matrix.android == 'none'
       uses: lukka/run-vcpkg@v11
 
     - name: Prepare Ubuntu
